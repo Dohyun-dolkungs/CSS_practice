@@ -1,0 +1,33 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background: tomato;
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: stretch 3s infinite alternate linear;
+}
+.box::before {
+    content: "running";
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+.box:hover {
+    animation-play-state: paused;
+    background: dodgerblue;
+}
+
+.box:hover::before {
+    content: "paused";
+}
+@keyframes stretch {
+    0%{
+        width: 150px;
+    }
+    100%{
+        width: 500px;
+    }
+}
